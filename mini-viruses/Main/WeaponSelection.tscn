@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bimope0rfsxd0"]
+
+[ext_resource type="Script" uid="uid://rx3oefx285kc" path="res://Main/weapon_1.gd" id="1_0c7i0"]
+[ext_resource type="Script" uid="uid://cva16ipmi0hd6" path="res://Main/weapon_selection.gd" id="1_51f3x"]
+
+[node name="WeaponSelection" type="CanvasLayer" unique_id=1772028951]
+process_mode = 3
+script = ExtResource("1_51f3x")
+
+[node name="PanelContainer" type="VBoxContainer" parent="." unique_id=743766000]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 70.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Weapon1" type="Button" parent="PanelContainer" unique_id=1383064651]
+layout_mode = 2
+text = "aura"
+script = ExtResource("1_0c7i0")
+
+[node name="Weapon2" type="Button" parent="PanelContainer" unique_id=1308606218]
+layout_mode = 2
+text = "asdasdasd"
+
+[node name="Weapon3" type="Button" parent="PanelContainer" unique_id=985274348]
+layout_mode = 2
+
+[node name="Weapon4" type="Button" parent="PanelContainer" unique_id=374428323]
+layout_mode = 2
+
+[connection signal="pressed" from="PanelContainer/Weapon1" to="." method="_on_weapon_1_pressed"]

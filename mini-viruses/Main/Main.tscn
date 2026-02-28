@@ -1,3 +1,15 @@
 [gd_scene format=3 uid="uid://s2kl5fg8nabq"]
 
+[ext_resource type="Script" uid="uid://c7r07otbh5kdf" path="res://Main/main.gd" id="1_lxy7q"]
+[ext_resource type="PackedScene" uid="uid://crpk3xaj3od0t" path="res://Player/Player.tscn" id="2_amygn"]
+[ext_resource type="PackedScene" uid="uid://b8rs7pna5e2op" path="res://scenes/level1.tscn" id="3_ps1la"]
+
 [node name="Main" type="Node2D" unique_id=1257625029]
+process_mode = 3
+script = ExtResource("1_lxy7q")
+
+[node name="Player" parent="." unique_id=182291660 instance=ExtResource("2_amygn")]
+process_mode = 1
+
+[node name="Level1" parent="." unique_id=614317989 instance=ExtResource("3_ps1la")]
+z_index = -2
