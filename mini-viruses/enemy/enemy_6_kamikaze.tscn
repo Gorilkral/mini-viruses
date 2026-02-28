@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://d1hpr4x0ja7ea"]
+
+[node name="Enemy6Kamikaze" type="CharacterBody2D" unique_id=1667280522]
