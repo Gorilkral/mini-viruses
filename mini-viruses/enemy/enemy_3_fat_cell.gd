@@ -1,14 +1,14 @@
 extends CharacterBody2D
 
-@export var speed: float = 35
-@export var max_health: float =  150
+@export var speed: float = 35.0
+@export var max_health: float =  150.0
 
 var current_health : float
 var player: Node2D
 
 func _ready():
 	current_health = max_health
-	player = get_tree().get_first_node_in_group("Player")
+	player = get_parent().get_node("Player")
 
 func _physics_process(delta: float):
 		if  player != null:

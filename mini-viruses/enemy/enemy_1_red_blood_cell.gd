@@ -12,7 +12,7 @@ var player: Node2D
 
 func _ready():
 	current_health=max_health
-	player = get_tree().get_first_node_in_group("Player")
+	player = get_parent().get_node("Player")
 
 func _physics_process(delta: float):
 	if player != null:
