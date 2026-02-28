@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://di5lq4p1be0eu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h1aey"]
+radius = 5.0
+
+[node name="Node2D" type="Node2D" unique_id=867866894]
+
+[node name="Bullet" type="Area2D" parent="." unique_id=570241214]
+
+[node name="Sprite2D" type="Sprite2D" parent="Bullet" unique_id=506751006]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet" unique_id=162593019]
+shape = SubResource("CircleShape2D_h1aey")
