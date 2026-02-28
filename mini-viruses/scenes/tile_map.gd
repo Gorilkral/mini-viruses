@@ -11,7 +11,7 @@ func _process(_delta: float) -> void:
 		var player_tile_pos = local_to_map(player.global_position)
 		
 		# Oyuncunun etrafındaki alanı tara ve gerekirse doldur
-		# Not: Bu çok büyük haritalarda performansı etkileyebilir, 
+		# Not: Bu çok büyük haritalarda performansı etkileyebilir, 	 
 		# o yüzden sadece oyuncu yeni bir tile'a geçtiğinde çalıştırmak daha iyidir.
 		_draw_tiles_around_player(player_tile_pos)
 
