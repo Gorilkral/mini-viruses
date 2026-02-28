@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dwmn5ku45b4rf"]
 
 [ext_resource type="Script" uid="uid://8cb6ssnh6j8r" path="res://Player/Attack/ice_spear.gd" id="1_0xbpf"]
-[ext_resource type="Texture2D" uid="uid://c8ukhn82xul0y" path="res://2841593.png" id="1_sh0c6"]
+[ext_resource type="Texture2D" uid="uid://5gyh3h8ox2dn" path="res://ice_spear (1).png" id="2_0xbpf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xbpf"]
 size = Vector2(41, 23)
@@ -14,7 +14,7 @@ script = ExtResource("1_0xbpf")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1222467183]
 position = Vector2(210, 195)
 scale = Vector2(0.027343683, 0.16015626)
-texture = ExtResource("1_sh0c6")
+texture = ExtResource("2_0xbpf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1633446996]
 position = Vector2(111, 170.5)
