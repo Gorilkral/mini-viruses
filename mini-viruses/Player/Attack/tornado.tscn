@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c88pu34beh7n6"]
 
+[ext_resource type="Script" uid="uid://boaio7mo4oa1q" path="res://Player/Attack/tornado.gd" id="1_8dtsi"]
 [ext_resource type="Texture2D" uid="uid://8r6iey7wk5ko" path="res://muz.png" id="1_puvvi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8dtsi"]
@@ -8,6 +9,7 @@ size = Vector2(61, 80.5)
 [node name="Tornado" type="Area2D" unique_id=607914993 groups=["attackkkk"]]
 collision_layer = 4
 collision_mask = 0
+script = ExtResource("1_8dtsi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=491014533]
 position = Vector2(329, 185)
@@ -17,3 +19,7 @@ texture = ExtResource("1_puvvi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=335905304]
 position = Vector2(333, 189)
 shape = SubResource("RectangleShape2D_8dtsi")
+
+[node name="Timer" type="Timer" parent="." unique_id=312436893]
+
+[node name="snd_attackkk" type="AudioStreamPlayer" parent="." unique_id=533753425]
