@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://b8rs7pna5e2op"]
 
 [ext_resource type="Texture2D" uid="uid://brfoivobd7ll2" path="res://assets/sprites/tile1.png" id="1_g2h75"]
+[ext_resource type="PackedScene" uid="uid://crpk3xaj3od0t" path="res://Player/Player.tscn" id="1_m7ahb"]
 [ext_resource type="Script" uid="uid://txx1mr2bm8p8" path="res://scenes/tile_map.gd" id="2_wwpf4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wwpf4"]
@@ -15,7 +16,11 @@ sources/1 = SubResource("TileSetAtlasSource_wwpf4")
 
 [node name="Level1" type="Node2D" unique_id=614317989]
 
+[node name="Player" parent="." unique_id=182291660 instance=ExtResource("1_m7ahb")]
+
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=903865115]
+process_mode = 3
+z_index = -1
 tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAAAAP//AQAAAAAAAAABAP//AQAAAAAAAAD/////AQAAAAAAAAD//wAAAQAAAAAAAAD+/wAAAQAAAAAAAAD+////AQAAAAAAAAD+/wEAAQAAAAAAAAD//wEAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAAAAAABAP7/AQAAAAAAAAAAAP7/AQAAAAAAAAD///7/AQAAAAAAAAD+//7/AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_m7ahb")
 script = ExtResource("2_wwpf4")
