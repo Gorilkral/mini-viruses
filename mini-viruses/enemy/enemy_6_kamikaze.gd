@@ -7,6 +7,8 @@ extends CharacterBody2D
 @export var max_health:float = 10.0
 @export var explosion_damage:float = 25.0
 @export var explosion_range:float = 35.0
+@export var min_xp_drop: int = 20
+@export var max_xp_drop: int = 40
 
 var current_health
 var player: Node2D
@@ -37,4 +39,8 @@ func take_damage(amount: float):
 		die()
 
 func die():
+	var xp_drop = randi_range(min_xp_drop, max_xp_drop)
+	if player != null and player.has_method("gain_xp"):
+		player.gain_xp(xp_drop)
+		
 	queue_free()

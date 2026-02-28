@@ -6,6 +6,8 @@ extends CharacterBody2D
 
 @export var speed: float = 70.0
 @export var max_health: float = 15.0
+@export var min_xp_drop: int = 8
+@export var max_xp_drop: int = 15
 
 #diğerlerinden farklı olan kod kısmı
 @export var offspring_scene: PackedScene
@@ -29,6 +31,10 @@ func take_damage(amount: float):
 		die()
 
 func die():
+	var xp_drop = randi_range(min_xp_drop, max_xp_drop)
+	if player != null and player.has_method("gain_xp"):
+		player.gain_xp(xp_drop)
+		
 	if offspring_scene != null:
 		for i in range(2):
 			var new_cell = offspring_scene.instantiate()

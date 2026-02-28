@@ -7,6 +7,8 @@ extends CharacterBody2D
 @export var max_health: float = 15.0
 @export var attack_range: float = 100.0
 @export var fire_rate: float = 2.0
+@export var min_xp_drop: int = 5
+@export var max_xp_drop: int = 12
 
 # enemy_5_ tarafından atılacak merminin dosyası burada
 # bu aşağıdaki "Packedscene" ksımı değişmeli heralde
@@ -51,4 +53,7 @@ func take_damage(amount: float):
 			die()
 
 func die():
+	var xp_drop = randi_range(min_xp_drop, max_xp_drop)
+	if player != null and player.has_method("gain_xp"):
+		player.gain_xp(xp_drop)
 	queue_free()

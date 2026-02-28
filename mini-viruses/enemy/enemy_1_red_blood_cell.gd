@@ -6,6 +6,9 @@ extends CharacterBody2D
 
 @export var speed: float = 80.0
 @export var max_health: float = 20.0
+@export var min_xp_drop: int = 1
+@export var max_xp_drop: int = 5
+
 
 var current_health: float
 var player: Node2D
@@ -26,4 +29,11 @@ func take_damage(damage_amount: float):
 		die()
 
 func die():
+	# 1. min_xp_drop ve max_xp_drop arasında rastgele bir sayı seç (Örn: 1 ile 5 arası)
+	var xp_drop = randi_range(min_xp_drop, max_xp_drop)
+	
+	# 2. Oyuncu hayattaysa ve XP alma fonksiyonu varsa, puanı DİREKT hesabına yatır
+	if player != null and player.has_method("gain_xp"):
+		player.gain_xp(xp_drop)
+	
 	queue_free()
