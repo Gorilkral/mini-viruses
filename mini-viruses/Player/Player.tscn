@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://p35gaqdyvtg2" path="res://Player/player.gd" id="1_q3lat"]
 [ext_resource type="Texture2D" uid="uid://b2d1xg8naiide" path="res://icon.svg" id="2_tok1r"]
+[ext_resource type="PackedScene" uid="uid://vdb1gu6ua54d" path="res://Player/stats_ui.tscn" id="3_tok1r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q3lat"]
 size = Vector2(127, 124)
@@ -28,3 +29,5 @@ shape = SubResource("CircleShape2D_q3lat")
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=1804281683]
 autostart = true
+
+[node name="StatsUI" parent="." unique_id=1209921199 instance=ExtResource("3_tok1r")]
