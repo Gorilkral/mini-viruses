@@ -6,6 +6,7 @@ extends TileMapLayer
 var render_distance = 20 
 
 func _process(_delta: float) -> void:
+	print_debug("aaaaaaaaaaaaaa")
 	if player:
 		# Oyuncunun olduğu tile koordinatını bul
 		var player_tile_pos = local_to_map(player.global_position)
@@ -16,9 +17,11 @@ func _process(_delta: float) -> void:
 		_draw_tiles_around_player(player_tile_pos)
 
 func _draw_tiles_around_player(center_pos: Vector2i):
+	# TileSet'indeki ilk geçerli kaynağın ID'sini otomatik al
+	var source_id = tile_set.get_source_id(0) 
+	
 	for x in range(center_pos.x - render_distance, center_pos.x + render_distance):
 		for y in range(center_pos.y - render_distance, center_pos.y + render_distance):
-			# Eğer o koordinatta tile yoksa (get_cell_source_id == -1)
-			if get_cell_source_id(Vector2i(x, y)) == -1:
-				# Buraya kendi TileSet ID'ni ve koordinatlarını yaz
-				set_cell(Vector2i(x, y), 0, Vector2i(0, 0))
+			var coords = Vector2i(x, y)
+			if get_cell_source_id(coords) == -1:
+				set_cell(coords, source_id, Vector2i(0, 0))

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var attack_timer = $AttackTimer
 @onready var attack_range = $AttackRange
-var upgrade_menu_scene = preload("res://Player/Upgrade/UpgradeMenu.tscn")
+var upgrade_menu_scene = preload("res://Main/Player/Upgrade/UpgradeMenu.tscn")
 
 @export_group("Can")
 @export var max_health := 100.0
@@ -96,7 +96,7 @@ func level_up():
 	get_tree().paused = true
 	
 
-var game_over_scene = preload("res://Player/GameOver/GameOver.tscn") # Dosya yoluna dikkat!
+var game_over_scene = preload("res://Main/Player/GameOver/GameOver.tscn") # Dosya yoluna dikkat!
 
 func take_damage(amount: float):
 	current_health -= amount
