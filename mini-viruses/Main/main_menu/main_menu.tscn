@@ -32,7 +32,7 @@ offset_right = 92.0
 offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
-text = " MİNİ VIRUSES"
+text = " MINI VIRUSES"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="." unique_id=1534553826]
