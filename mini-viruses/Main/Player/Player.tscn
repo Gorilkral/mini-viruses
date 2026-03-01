@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://duhpnwp3bho1r" path="res://Main/assets/sprites/players/Untitled.png" id="2_wyc5r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q3lat"]
-size = Vector2(127, 124)
+size = Vector2(113, 106)
 
 [node name="Player" type="CharacterBody2D" unique_id=182291660 groups=["player"]]
 script = ExtResource("1_q3lat")
@@ -12,7 +12,7 @@ script = ExtResource("1_q3lat")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=714960434]
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1642844650]
-position = Vector2(-0.5, 0)
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_q3lat")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=653996004]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bju7pchl8owb1"]
 
-[ext_resource type="Script" path="res://Main/enemy/enemy_1_red_blood_cell.gd" id="1_6js07"]
+[ext_resource type="Script" uid="uid://db2ok2l08x7d0" path="res://Main/enemy/enemy_1_red_blood_cell.gd" id="1_6js07"]
 [ext_resource type="Texture2D" uid="uid://n3l826h30ova" path="res://Main/assets/sprites/enemies/virus2.png" id="2_xv0tb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ba3gm"]

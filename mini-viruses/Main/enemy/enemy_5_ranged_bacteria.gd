@@ -20,7 +20,7 @@ var fire_cooldown= 0.5
 
 func _ready():
 	current_health=max_health
-	player = get_parent().get_node("player")
+	player = get_parent().get_node("Player")
 
 func _physics_process(delta: float):
 	if player != null:
