@@ -1,8 +1,8 @@
 extends CanvasLayer
 
 # Silah sahnelerini buraya preload ediyoruz (Yollar senin klasör yapına göre kanka!)
-var aura_scene = preload("res://Main/Weapons/Aura.tscn")
-var ranged_scene = preload("res://Main/Weapons/Ranged.tscn")
+var orbital_scene = preload("res://Main/Weapons/weapon_1_orbital.tscn")
+var ranged_scene = preload("res://Main/Weapons/weapon_2_piv_piv.tscn")
 # var projectile_scene = preload("res://Main/Weapons/ProjectileWeapon.tscn") # Diğerlerini sonra ekleriz
 
 func _ready():
@@ -27,14 +27,14 @@ func start_game():
 func _on_weapon_1_pressed() -> void:
 	print_debug("aaaa")
 	# 1. Aura'yı oluştur
-	var aura = aura_scene.instantiate()
+	var orbital = orbital_scene.instantiate()
 	
 	# 2. Player'ı bul ve silahı ona ver
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
-		player.add_child(aura)
+		player.add_child(orbital)
 		# Silahın konumu tam player'ın merkezi olsun
-		aura.position = Vector2.ZERO
+		orbital.position = Vector2.ZERO
 	
 	# 3. Oyunu devam ettir ve menüyü kapat
 	start_game()

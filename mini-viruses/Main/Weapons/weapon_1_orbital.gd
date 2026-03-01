@@ -30,4 +30,4 @@ func on_hit(body):
 	if body.is_in_group("enemy"):
 		if body.has_method("take_damage"):
 			# 999 çarpanıyla tokadı bas!
-			body.take_damage(player.attack_damage * 999)
+			body.take_damage(player.attack_damage)

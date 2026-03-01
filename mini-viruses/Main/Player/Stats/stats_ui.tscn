@@ -122,3 +122,14 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_styles/fill = SubResource("StyleBoxFlat_s6cod")
 show_percentage = false
+
+[node name="XpText" type="Label" parent="MarginContainer3/XpBar" unique_id=157688726]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1

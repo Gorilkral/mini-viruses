@@ -17,6 +17,7 @@ var player: Node2D
 var attack_cooldown: float = 0.0
 
 func _ready():
+	add_to_group("enemy")
 	current_health = max_health
 	player = get_tree().get_first_node_in_group("player")
 

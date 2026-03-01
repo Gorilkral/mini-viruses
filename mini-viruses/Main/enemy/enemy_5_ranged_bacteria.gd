@@ -15,6 +15,7 @@ var player: Node2D
 var fire_cooldown = 0.5
 
 func _ready():
+	add_to_group("enemy")
 	current_health = max_health
 	player = get_tree().get_first_node_in_group("player")
 

@@ -13,6 +13,7 @@ var player: Node2D
 var is_exploding: bool = false # Patlama sürecinde mi?
 
 func _ready():
+	add_to_group("enemy")
 	current_health = max_health
 	player = get_tree().get_first_node_in_group("player")
 

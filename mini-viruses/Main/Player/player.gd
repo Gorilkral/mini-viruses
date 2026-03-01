@@ -81,6 +81,7 @@ func add_xp(amount: float):
 	xp += amount
 	if xp >= xp_required:
 		level_up()
+		xp = 0
 
 func level_up():
 	print("Level Up! Menü açılıyor...") # Test için kalsın
