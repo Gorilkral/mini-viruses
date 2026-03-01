@@ -15,7 +15,7 @@ var player: Node2D
 
 func _ready():
 	current_health = max_health
-	player = get_parent().get_node("Player")
+	player = get_tree().get_first_node_in_group("player")
 
 func _physics_process(delta: float):
 	if player != null:
@@ -29,9 +29,9 @@ func _physics_process(delta: float):
 			explode()
 
 func explode():
-	if player.has_method("take_damage"):
+	if player != null and player.has_method("take_damage"):
 		player.take_damage(explosion_damage)
-		queue_free()
+		queue_free() # Patlayıp yok olur
 
 func take_damage(amount: float):
 	current_health -= amount
@@ -40,7 +40,7 @@ func take_damage(amount: float):
 
 func die():
 	var xp_drop = randi_range(min_xp_drop, max_xp_drop)
-	if player != null and player.has_method("gain_xp"):
-		player.gain_xp(xp_drop)
+	if player != null and player.has_method("add_xp"):
+		player.add_xp(xp_drop)
 		
 	queue_free()
