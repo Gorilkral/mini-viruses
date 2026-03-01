@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dbd2h4j8w2os"]
+
+[ext_resource type="Script" uid="uid://c352ykofm68m4" path="res://Main/main_menu/main_menu.gd" id="1_id3ul"]
+
+[node name="main_menu" type="Control" unique_id=1778011545]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_id3ul")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=750332344]
+layout_mode = 0
+offset_left = -33.0
+offset_top = -33.0
+offset_right = 1704.0
+offset_bottom = 691.0
+color = Color(0.8264028, 0.12975645, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=924974787]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -88.0
+offset_right = 92.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+text = " MİNİ VIRUSES"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1534553826]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -15.5
+offset_right = 23.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "PLAY"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
