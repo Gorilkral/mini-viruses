@@ -1,13 +1,10 @@
 [gd_scene format=3 uid="uid://crpk3xaj3od0t"]
 
-[ext_resource type="Script" uid="uid://p35gaqdyvtg2" path="res://Player/player.gd" id="1_q3lat"]
-[ext_resource type="Texture2D" uid="uid://b2d1xg8naiide" path="res://icon.svg" id="2_q3lat"]
+[ext_resource type="Script" uid="uid://p35gaqdyvtg2" path="res://Main/Player/player.gd" id="1_q3lat"]
+[ext_resource type="Texture2D" uid="uid://duhpnwp3bho1r" path="res://Main/assets/sprites/players/Untitled.png" id="2_wyc5r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q3lat"]
 size = Vector2(127, 124)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_q3lat"]
-radius = 136.0
 
 [node name="Player" type="CharacterBody2D" unique_id=182291660 groups=["player"]]
 script = ExtResource("1_q3lat")
@@ -19,12 +16,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q3lat")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=653996004]
-texture = ExtResource("2_q3lat")
-
-[node name="AttackRange" type="Area2D" parent="." unique_id=1906587698]
-
-[node name="HurtBox" type="CollisionShape2D" parent="AttackRange" unique_id=1538683718]
-shape = SubResource("CircleShape2D_q3lat")
+texture = ExtResource("2_wyc5r")
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=1804281683]
 autostart = true

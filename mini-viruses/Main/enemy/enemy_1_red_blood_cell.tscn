@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://bju7pchl8owb1"]
 
 [ext_resource type="Script" path="res://Main/enemy/enemy_1_red_blood_cell.gd" id="1_6js07"]
-[ext_resource type="Texture2D" uid="uid://b2d1xg8naiide" path="res://icon.svg" id="2_ba3gm"]
+[ext_resource type="Texture2D" uid="uid://n3l826h30ova" path="res://Main/assets/sprites/enemies/virus2.png" id="2_xv0tb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ba3gm"]
-radius = 88.14193
+radius = 56.008926
 
 [node name="Enemy1Bacteria" type="CharacterBody2D" unique_id=449924110]
 script = ExtResource("1_6js07")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1622640108]
+texture = ExtResource("2_xv0tb")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=779396334]
 shape = SubResource("CircleShape2D_ba3gm")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1622640108]
-texture = ExtResource("2_ba3gm")

@@ -16,7 +16,6 @@ var current_health: float
 
 @export_group("Hareket")
 @export var speed := 300.0
-@export var pickup_range := 50.0
 
 func _ready() -> void:
 	current_health = max_health
@@ -70,8 +69,6 @@ func apply_upgrade(upgrade_type: String, value: float):
 		"projectile_count":
 			# You should add this variable at the top of player.gd: var projectile_count = 1
 			projectile_count += int(value)
-		"pickup_range":
-			pickup_range += value
 
 # Tecrübe puanı sistemi
 var level := 1

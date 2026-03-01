@@ -19,4 +19,3 @@ z_index = -2
 [node name="StatsUI" parent="." unique_id=1209921199 instance=ExtResource("3_6aewd")]
 
 [node name="EnemySpawner" parent="." unique_id=676716919 instance=ExtResource("2_6aewd")]
-script = null
