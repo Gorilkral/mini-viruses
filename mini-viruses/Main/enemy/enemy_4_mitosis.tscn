@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://7rm66u7nmsta"]
 
-[ext_resource type="Script" path="res://Main/enemy/enemy_4_mitosis.gd" id="1_xe1d8"]
+[ext_resource type="Script" uid="uid://ble4o3j64nhjc" path="res://Main/enemy/enemy_4_mitosis.gd" id="1_xe1d8"]
 [ext_resource type="PackedScene" uid="uid://bju7pchl8owb1" path="res://Main/enemy/enemy_1_red_blood_cell.tscn" id="2_io4t5"]
 [ext_resource type="Texture2D" uid="uid://bjfntyrklcsoj" path="res://Main/assets/sprites/enemies/virus4.png" id="3_3hp3q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_odhgt"]
-radius = 70.0
+radius = 64.00781
 
 [node name="Enemy4Mitosis" type="CharacterBody2D" unique_id=1496949364]
+motion_mode = 1
 script = ExtResource("1_xe1d8")
 offspring_scene = ExtResource("2_io4t5")
 

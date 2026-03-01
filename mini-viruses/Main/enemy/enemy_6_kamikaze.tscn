@@ -1,16 +1,18 @@
 [gd_scene format=3 uid="uid://d1hpr4x0ja7ea"]
 
-[ext_resource type="Script" path="res://Main/enemy/enemy_6_kamikaze.gd" id="1_ubc6r"]
+[ext_resource type="Script" uid="uid://d2xcbst3tfd3k" path="res://Main/enemy/enemy_6_kamikaze.gd" id="1_ubc6r"]
 [ext_resource type="Texture2D" uid="uid://c5q8o164v3ybg" path="res://Main/assets/sprites/enemies/virus1.png" id="2_k5tpk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmq13"]
-radius = 52.03845
+radius = 61.008198
 
 [node name="Enemy6Kamikaze" type="CharacterBody2D" unique_id=1667280522]
+motion_mode = 1
 script = ExtResource("1_ubc6r")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=991126102]
 texture = ExtResource("2_k5tpk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1036249212]
+position = Vector2(2, 2)
 shape = SubResource("CircleShape2D_xmq13")
