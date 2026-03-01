@@ -81,6 +81,8 @@ func add_xp(amount: float):
 	xp += amount
 	if xp >= xp_required:
 		xp = xp - xp_required
+		if has_node("LvlSound"):
+			$LvlSound.play()
 		level = level + 1
 		xp_required = xp_required + 10
 		level_up()
@@ -113,6 +115,9 @@ func take_damage(amount: float):
 		die()
 
 func die():
+	if has_node("DeathSound"):
+		$DeathSound.play()
+	
 	current_health = 0
 	if death == false:
 		print("Öldün!")

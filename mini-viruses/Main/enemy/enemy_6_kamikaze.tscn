@@ -2,9 +2,33 @@
 
 [ext_resource type="Script" uid="uid://d2xcbst3tfd3k" path="res://Main/enemy/enemy_6_kamikaze.gd" id="1_ubc6r"]
 [ext_resource type="Texture2D" uid="uid://c5q8o164v3ybg" path="res://Main/assets/sprites/enemies/virus1.png" id="2_k5tpk"]
+[ext_resource type="AudioStream" uid="uid://b1551bolwfh13" path="res://Main/assets/Sounds/explosion.wav" id="3_cgtpi"]
+[ext_resource type="AudioStream" uid="uid://ckajcfd6kiluc" path="res://Main/assets/Sounds/Hit/hit1.wav" id="11_acghw"]
+[ext_resource type="AudioStream" uid="uid://v4fvbqb4l63k" path="res://Main/assets/Sounds/Hit/hit2.wav" id="12_hkvps"]
+[ext_resource type="AudioStream" uid="uid://bgmuthn24eu7i" path="res://Main/assets/Sounds/Hit/hit3.wav" id="13_0wgrv"]
+[ext_resource type="AudioStream" uid="uid://cya6qfa84ekbe" path="res://Main/assets/Sounds/Hit/hit4.wav" id="14_pur0m"]
+[ext_resource type="AudioStream" uid="uid://cix32ku1jv113" path="res://Main/assets/Sounds/Hit/hits1.wav" id="15_x2v3p"]
+[ext_resource type="AudioStream" uid="uid://b34k3ffgbceax" path="res://Main/assets/Sounds/Hit/hits2.wav" id="16_5lide"]
+[ext_resource type="AudioStream" uid="uid://btm82mbg5eqxe" path="res://Main/assets/Sounds/Hit/hits3.wav" id="17_kgebp"]
+[ext_resource type="AudioStream" uid="uid://dr53jyo0madi8" path="res://Main/assets/Sounds/Hit/hits4.wav" id="18_dnc1r"]
+[ext_resource type="AudioStream" uid="uid://g3wipydcsm7t" path="res://Main/assets/Sounds/Hit/hits5.wav" id="19_y2mbk"]
+[ext_resource type="AudioStream" uid="uid://buiav8m2fwxhl" path="res://Main/assets/Sounds/Hit/hits.wav" id="20_6erx5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmq13"]
 radius = 25.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2xmr3"]
+streams_count = 10
+stream_0/stream = ExtResource("11_acghw")
+stream_1/stream = ExtResource("12_hkvps")
+stream_2/stream = ExtResource("13_0wgrv")
+stream_3/stream = ExtResource("14_pur0m")
+stream_4/stream = ExtResource("15_x2v3p")
+stream_5/stream = ExtResource("16_5lide")
+stream_6/stream = ExtResource("17_kgebp")
+stream_7/stream = ExtResource("18_dnc1r")
+stream_8/stream = ExtResource("19_y2mbk")
+stream_9/stream = ExtResource("20_6erx5")
 
 [node name="Enemy6Kamikaze" type="CharacterBody2D" unique_id=1667280522]
 motion_mode = 1
@@ -18,3 +42,9 @@ texture = ExtResource("2_k5tpk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1036249212]
 position = Vector2(2, 2)
 shape = SubResource("CircleShape2D_xmq13")
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="." unique_id=55076962]
+stream = ExtResource("3_cgtpi")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="." unique_id=1287926092]
+stream = SubResource("AudioStreamRandomizer_2xmr3")

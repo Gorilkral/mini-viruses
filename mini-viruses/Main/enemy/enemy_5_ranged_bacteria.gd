@@ -60,11 +60,17 @@ func shoot():
 		get_tree().root.call_deferred("add_child", bullet)
 
 func take_damage(amount: float):
+	if has_node("HitSound"):
+		$HitSound.play()
+		
 	current_health -= amount
 	if current_health <= 0:
 		die()
 
 func die():
+	if has_node("DeathSound"):
+		$DeathSound.play()
+	
 	is_dead = true # Ölüm süreci başladı
 	
 	# 1. Çarpışmaları kapatıyoruz (ölürken bize takılmasın)

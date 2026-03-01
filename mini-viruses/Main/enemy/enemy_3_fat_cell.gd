@@ -41,11 +41,17 @@ func _physics_process(delta: float):
 					attack_cooldown = 1.5 # Tank olduğu için biraz daha yavaş vursun
 
 func take_damage(damage_amount: float):
+	if has_node("HitSound"):
+		$HitSound.play()
+		
 	current_health -= damage_amount
 	if current_health <= 0:
 		die()
 
 func die():
+	if has_node("DeathSound"):
+		$DeathSound.play()
+	
 	is_dead = true # Ölüm süreci başladı
 	
 	# 1. Çarpışmaları kapatıyoruz (ölürken bize takılmasın)

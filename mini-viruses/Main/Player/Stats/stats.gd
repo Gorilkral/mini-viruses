@@ -64,7 +64,6 @@ func _process(delta: float) -> void:
 		var text_to_show = "[ Stats ]\n"
 		text_to_show += "Damage: " + str(int(round(player.attack_damage))) + "\n"
 		text_to_show += "Speed: " + str(int(round(player.speed))) + "\n"
-		text_to_show += "AtkSpd: " + str(int(round(player.attack_speed))) + "\n"
-		text_to_show += "AoE: " + str(int(round(player.area_of_effect)))
+		text_to_show += "AtkSpd: " + str(int(player.attack_speed * 100))
 		
 		stats_label.text = text_to_show

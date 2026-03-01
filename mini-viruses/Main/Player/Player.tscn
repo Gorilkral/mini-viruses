@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://p35gaqdyvtg2" path="res://Main/Player/player.gd" id="1_q3lat"]
 [ext_resource type="Texture2D" uid="uid://duhpnwp3bho1r" path="res://Main/assets/sprites/players/Untitled.png" id="2_wyc5r"]
+[ext_resource type="AudioStream" uid="uid://d3m8uyh6ew4ci" path="res://Main/assets/Sounds/lvlup.wav" id="3_n21ks"]
+[ext_resource type="AudioStream" uid="uid://dlyeptn13du1f" path="res://Main/assets/Sounds/robloxIgghh.wav" id="4_6fdm1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wyc5r"]
 radius = 25.578312
@@ -23,3 +25,9 @@ texture = ExtResource("2_wyc5r")
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=1804281683]
 autostart = true
+
+[node name="LvlSound" type="AudioStreamPlayer2D" parent="." unique_id=780893250]
+stream = ExtResource("3_n21ks")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="." unique_id=1768807674]
+stream = ExtResource("4_6fdm1")

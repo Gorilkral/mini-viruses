@@ -41,11 +41,17 @@ func _physics_process(delta: float):
 					attack_cooldown = 1.0
 
 func take_damage(amount: float):
+	if has_node("HitSound"):
+		$HitSound.play()
+	
 	current_health -= amount
 	if current_health <= 0:
 		die()
 
 func die():
+	if has_node("SplitSound"):
+		$SplitSound.play()
+	
 	var xp_drop = randi_range(min_xp_drop, max_xp_drop)
 	if player != null and player.has_method("add_xp"):
 		player.add_xp(xp_drop)
