@@ -22,18 +22,12 @@ grow_vertical = 2
 
 [node name="Weapon1" type="Button" parent="PanelContainer" unique_id=1383064651]
 layout_mode = 2
-text = "aura"
+text = "Banana"
 script = ExtResource("1_0c7i0")
 
 [node name="Weapon2" type="Button" parent="PanelContainer" unique_id=1308606218]
 layout_mode = 2
-text = "Orb"
-
-[node name="Weapon3" type="Button" parent="PanelContainer" unique_id=985274348]
-layout_mode = 2
-
-[node name="Weapon4" type="Button" parent="PanelContainer" unique_id=374428323]
-layout_mode = 2
+text = "Staff"
 
 [connection signal="pressed" from="PanelContainer/Weapon1" to="." method="_on_weapon_1_pressed"]
 [connection signal="pressed" from="PanelContainer/Weapon2" to="." method="_on_weapon_2_pressed"]

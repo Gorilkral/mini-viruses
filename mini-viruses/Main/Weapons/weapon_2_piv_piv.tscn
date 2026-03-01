@@ -1,16 +1,20 @@
 [gd_scene format=3 uid="uid://0jujnku43r55"]
 
-[ext_resource type="Script" uid="uid://blfdcikmuyn1f" path="res://Main/Weapons/weapon_2_piv_piv.gd" id="1_hdxj6"]
+[ext_resource type="Script" path="res://Main/Weapons/weapon_2_piv_piv.gd" id="1_hdxj6"]
 [ext_resource type="Texture2D" uid="uid://5gyh3h8ox2dn" path="res://ice_spear (1).png" id="2_jt3p8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lcj4o"]
 radius = 12.083046
 
 [node name="Weapon2PivPiv" type="Area2D" unique_id=739023693]
+position = Vector2(29, 2)
+rotation = 1.7523105
 script = ExtResource("1_hdxj6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=812846476]
 texture = ExtResource("2_jt3p8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1557522553]
+position = Vector2(2, 0)
+rotation = 1.7523105
 shape = SubResource("CircleShape2D_lcj4o")

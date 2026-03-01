@@ -4,14 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://4idfp7n1catl" path="res://Main/assets/sprites/enemies/virus3.png" id="2_6t748"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6t748"]
-radius = 30.0
-height = 126.0
+radius = 24.0
+height = 88.0
 
 [node name="Enemy2Virus" type="CharacterBody2D" unique_id=308009306]
 motion_mode = 1
 script = ExtResource("1_g7iwp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=865527637]
+position = Vector2(-3.8146973e-06, -1.9073486e-06)
+scale = Vector2(0.7421875, 0.703125)
 texture = ExtResource("2_6t748")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1303099491]

@@ -4,14 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://bmqcxxjwwlk10" path="res://Main/assets/sprites/enemies/enemy_bullet.png" id="2_pyv8o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y4bid"]
-radius = 8.0
+radius = 14.0
 
 [node name="EnemyBullet" type="Area2D" unique_id=102251750]
 script = ExtResource("1_u320w")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1613356918]
-position = Vector2(0.37500048, -0.5)
-scale = Vector2(0.16601564, 0.16406251)
+position = Vector2(0, 4.7683716e-07)
+scale = Vector2(0.23632814, 0.25781253)
 texture = ExtResource("2_pyv8o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1787853604]

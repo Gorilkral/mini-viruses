@@ -80,8 +80,15 @@ var xp_required := 100.0
 func add_xp(amount: float):
 	xp += amount
 	if xp >= xp_required:
+		xp = xp - xp_required
+		level = level + 1
+		xp_required = xp_required + 10
 		level_up()
-		xp = 0
+func add_health(amount: float):
+	if current_health < max_health:
+		current_health = current_health + amount
+		if current_health > max_health:
+			current_health = max_health
 
 func level_up():
 	print("Level Up! Menü açılıyor...") # Test için kalsın

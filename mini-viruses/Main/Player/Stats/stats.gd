@@ -4,7 +4,10 @@ extends CanvasLayer
 @onready var health_bar = %HealthBar
 @onready var health_text = %HealthText
 @onready var damage_bar = %DamageBar
-@onready var xp_bar = %XpBar
+
+# YENİ: XP Barımızı ve XP Yazımızı (Label) koda bağladık
+@onready var xp_bar = %XpBar 
+@onready var xp_text = %XpText 
 
 var player: Node2D
 var previous_health: float = 100
@@ -13,48 +16,47 @@ var damage_tween: Tween
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	
-	# Oyun başladığında barları eşitliyoruz ki başta saçma durmasın
 	if player:
 		previous_health = player.current_health
 		health_bar.value = player.current_health
 		damage_bar.value = player.current_health
+		
+		# Oyun başlarken XP Barının başlangıç ayarları
+		if xp_bar:
+			xp_bar.value = player.xp
+			xp_bar.max_value = player.xp_required
 
 func _process(delta: float) -> void:
 	if player:
 		var current = player.current_health
 		
-		# Her iki barın da maksimum canını güncelliyoruz (Level atlayınca senkronize kalsınlar)
+		# Can barlarının sınırlarını güncelle
 		health_bar.max_value = player.max_health
 		damage_bar.max_value = player.max_health
-		
-		# Ana can barı animasyonsuz, her zaman güncel canı gösterir
 		health_bar.value = current
 		
-		# EĞER HASAR YEDİYSEK (Canımız bir önceki kareden daha düşükse)
+		# EĞER HASAR YEDİYSEK
 		if current < previous_health:
-			
-			# Eğer halihazırda çalışan bir animasyon varsa onu iptal et (titremeyi önler)
 			if damage_tween:
 				damage_tween.kill()
 				
-			# Arkadaki kırmızı bar için yeni bir animasyon başlat
 			damage_tween = get_tree().create_tween()
-			damage_tween.tween_interval(0.4) # 0.4 saniye bekle (Kırmızı alan havada kalır)
-			# Ardından 0.3 saniye içinde kırmızı barı güncel cana doğru kaydır
+			damage_tween.tween_interval(0.4) 
 			damage_tween.tween_property(damage_bar, "value", current, 0.3).set_trans(Tween.TRANS_SINE)
 			
-		# EĞER CANIMIZ ARTTIYSA (İyileşme veya Max Can yükselmesi)
+		# EĞER CANIMIZ ARTTIYSA
 		elif current > previous_health:
-			damage_bar.value = current # İyileşirken arkadaki bar animasyonsuz anında dolsun
+			damage_bar.value = current 
 			
-		# Bir sonraki karede karşılaştırmak için güncel canı hafızaya al
 		previous_health = current
 		
+		# --- YENİ: XP BARI VE YAZISI GÜNCELLEMESİ ---
 		if xp_bar:
-			xp_bar.max_value = player.xp_required # Level atlayınca max XP değişeceği için sürekli güncelliyoruz
-			
-			# XP barının yumuşak (animasyonlu) dolmasını sağlıyoruz
+			xp_bar.max_value = player.xp_required 
 			xp_bar.value = lerp(xp_bar.value, float(player.xp), 10.0 * delta)
+			
+		if xp_text: # EĞER EKRANDA BİR YAZI (LABEL) VARSA ONU DA GÜNCELLE
+			xp_text.text = " LEVEL " + str(int(player.level)) + "     XP " + str(int(player.xp)) + " / " + str(int(player.xp_required))
 		
 		# --- YAZI GÜNCELLEMELERİ ---
 		health_text.text = str(int(round(player.current_health))) + " / " + str(round(player.max_health))

@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cygjl5mrm3t02" path="res://Main/Player/Upgrade/upgrade_menu.gd" id="1_en4bh"]
 
-[node name="UpgradeMenu" type="CanvasLayer"]
+[node name="UpgradeMenu" type="CanvasLayer" unique_id=1827462691]
 process_mode = 3
 script = ExtResource("1_en4bh")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1489508491]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -21,16 +21,16 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=361192959]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 50
 
-[node name="Option1" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Option1" type="Button" parent="PanelContainer/VBoxContainer" unique_id=436335071]
 layout_mode = 2
 
-[node name="Option2" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Option2" type="Button" parent="PanelContainer/VBoxContainer" unique_id=758530233]
 layout_mode = 2
 
-[node name="Option3" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Option3" type="Button" parent="PanelContainer/VBoxContainer" unique_id=529425174]
 layout_mode = 2

@@ -4,13 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://c5q8o164v3ybg" path="res://Main/assets/sprites/enemies/virus1.png" id="2_k5tpk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmq13"]
-radius = 61.008198
+radius = 25.0
 
 [node name="Enemy6Kamikaze" type="CharacterBody2D" unique_id=1667280522]
 motion_mode = 1
 script = ExtResource("1_ubc6r")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=991126102]
+position = Vector2(0, -3.8146973e-06)
+scale = Vector2(0.5234375, 0.46875)
 texture = ExtResource("2_k5tpk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1036249212]

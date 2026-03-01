@@ -57,4 +57,16 @@ func die():
 			new_cell.global_position = global_position + random_offset
 			get_parent().call_deferred("add_child", new_cell)
 
+	# 3. KÜÇÜLEREK VE ŞEFFAFLAŞARAK SİLİNME ANİMASYONU (Tween)
+	var tween = create_tween()
+	
+	# 0.3 saniye içinde boyutu (scale) 0'a getir (Kamikazenin tersi)
+	tween.tween_property(self, "scale", Vector2(0.0, 0.0), 0.3)
+	# Aynı anda (parallel), 0.3 saniye içinde yavaşça görünmez yap (fade out)
+	tween.parallel().tween_property(self, "modulate:a", 0.0, 0.3)
+	
+	# Animasyon (0.3 saniye) bitene kadar fonksiyonu burada bekletiyoruz (await)
+	await tween.finished
+	
+	# 4. Animasyon bitti, şimdi silinebiliriz
 	queue_free()

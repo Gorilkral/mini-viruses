@@ -3,8 +3,8 @@ extends CharacterBody2D
 
 @export var speed: float = 50.0
 @export var max_health: float = 15.0
-@export var attack_range: float = 250.0 # Oyuncuya ne kadar uzaktan ateş edeceği (Biraz artırdım)
-@export var fire_rate: float = 2.0
+@export var attack_range: float = 500.0 # Oyuncuya ne kadar uzaktan ateş edeceği (Biraz artırdım)
+@export var fire_rate: float = 2.5
 @export var min_xp_drop: int = 5
 @export var max_xp_drop: int = 12
 
@@ -13,6 +13,8 @@ extends CharacterBody2D
 var current_health: float
 var player: Node2D
 var fire_cooldown = 0.5
+
+var is_dead: bool = false
 
 func _ready():
 	add_to_group("enemy")
@@ -63,7 +65,26 @@ func take_damage(amount: float):
 		die()
 
 func die():
+	is_dead = true # Ölüm süreci başladı
+	
+	# 1. Çarpışmaları kapatıyoruz (ölürken bize takılmasın)
+	$CollisionShape2D.set_deferred("disabled", true)
+	
+	# 2. XP'yi oyuncuya gönderiyoruz (animasyon başlamadan önce)
 	var xp_drop = randi_range(min_xp_drop, max_xp_drop)
 	if is_instance_valid(player) and player.has_method("add_xp"):
 		player.add_xp(xp_drop)
+	
+	# 3. KÜÇÜLEREK VE ŞEFFAFLAŞARAK SİLİNME ANİMASYONU (Tween)
+	var tween = create_tween()
+	
+	# 0.3 saniye içinde boyutu (scale) 0'a getir (Kamikazenin tersi)
+	tween.tween_property(self, "scale", Vector2(0.0, 0.0), 0.3)
+	# Aynı anda (parallel), 0.3 saniye içinde yavaşça görünmez yap (fade out)
+	tween.parallel().tween_property(self, "modulate:a", 0.0, 0.3)
+	
+	# Animasyon (0.3 saniye) bitene kadar fonksiyonu burada bekletiyoruz (await)
+	await tween.finished
+	
+	# 4. Animasyon bitti, şimdi silinebiliriz
 	queue_free()
