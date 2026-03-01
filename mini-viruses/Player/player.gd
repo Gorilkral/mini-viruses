@@ -107,7 +107,6 @@ func take_damage(amount: float):
 
 func die():
 	print("Öldün!")
-	get_tree().paused = true
 	var screen = game_over_scene.instantiate()
 	get_tree().root.add_child(screen)
 	

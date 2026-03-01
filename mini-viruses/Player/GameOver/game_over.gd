@@ -1,6 +1,9 @@
 extends CanvasLayer
 
 func _ready() -> void:
+	# 1 saniye bekle ve sonra oyunu durdur
+	await get_tree().create_timer(1.0).timeout
+	get_tree().paused = true
 	# Yollar tam olarak sahne ağacındaki gibi olmalı
 	# Eğer PanelContainer içindeyse doğrudan böyle çağır:
 	$PanelContainer/VBoxContainer/RetryButton.pressed.connect(_on_retry_button_pressed)
