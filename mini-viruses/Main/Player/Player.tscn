@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://p35gaqdyvtg2" path="res://Main/Player/player.gd" id="1_q3lat"]
 [ext_resource type="Texture2D" uid="uid://duhpnwp3bho1r" path="res://Main/assets/sprites/players/Untitled.png" id="2_wyc5r"]
+[ext_resource type="PackedScene" uid="uid://0jujnku43r55" path="res://Main/Weapons/weapon_2_piv_piv.tscn" id="3_vpmj6"]
+[ext_resource type="PackedScene" uid="uid://d1lq5c0oirnp" path="res://Main/Weapons/auto_aim_bullet.tscn" id="4_n21ks"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wyc5r"]
 radius = 43.54595
@@ -21,3 +23,7 @@ texture = ExtResource("2_wyc5r")
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=1804281683]
 autostart = true
+
+[node name="Weapon2PivPiv" parent="." unique_id=739023693 instance=ExtResource("3_vpmj6")]
+
+[node name="AutoAimBullet" parent="." unique_id=507153432 instance=ExtResource("4_n21ks")]

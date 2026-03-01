@@ -22,6 +22,7 @@ func _input(event):
 		die()
 
 func _ready():
+	add_to_group("enemy")
 	current_health = max_health
 	# Oyuncuyu grup ismiyle güvenli bir şekilde buluyoruz (Hata vermemesi için "player" küçük harf)
 	player = get_tree().get_first_node_in_group("player")
