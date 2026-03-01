@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://vdb1gu6ua54d"]
 
-[ext_resource type="Script" path="res://Main/Player/Stats/stats.gd" id="1_m7hk8"]
+[ext_resource type="Script" uid="uid://go7q5x0phs35" path="res://Main/Player/Stats/stats.gd" id="1_m7hk8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7hk8"]
 content_margin_left = 5.0
@@ -41,6 +41,9 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s6cod"]
+bg_color = Color(0.7387246, 0.44225222, 0.9468886, 1)
+
 [node name="StatsUI" type="CanvasLayer" unique_id=1209921199]
 script = ExtResource("1_m7hk8")
 
@@ -66,7 +69,7 @@ unique_name_in_owner = true
 layout_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="." unique_id=732817390]
-anchors_preset = -1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -350.0
@@ -102,3 +105,20 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="." unique_id=1584275316]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.06
+anchor_right = 0.5
+anchor_bottom = 0.07
+offset_left = -349.0
+offset_right = 345.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="XpBar" type="ProgressBar" parent="MarginContainer3" unique_id=1557143554]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_s6cod")
+show_percentage = false

@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var health_bar = %HealthBar
 @onready var health_text = %HealthText
 @onready var damage_bar = %DamageBar
+@onready var xp_bar = %XpBar
 
 var player: Node2D
 var previous_health: float = 100
@@ -48,6 +49,12 @@ func _process(delta: float) -> void:
 			
 		# Bir sonraki karede karşılaştırmak için güncel canı hafızaya al
 		previous_health = current
+		
+		if xp_bar:
+			xp_bar.max_value = player.xp_required # Level atlayınca max XP değişeceği için sürekli güncelliyoruz
+			
+			# XP barının yumuşak (animasyonlu) dolmasını sağlıyoruz
+			xp_bar.value = lerp(xp_bar.value, float(player.xp), 10.0 * delta)
 		
 		# --- YAZI GÜNCELLEMELERİ ---
 		health_text.text = str(int(round(player.current_health))) + " / " + str(round(player.max_health))

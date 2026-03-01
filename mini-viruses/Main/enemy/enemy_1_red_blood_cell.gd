@@ -14,6 +14,13 @@ var current_health: float
 var player: Node2D
 var attack_cooldown: float = 0.0 # Üst üste vurmayı engelleyecek sayaç
 
+var is_dead: bool = false
+
+func _input(event):
+	# Klavyede 'L' tuşuna basınca anında level atlatır
+	if event is InputEventKey and event.pressed and event.keycode == KEY_O:
+		die()
+
 func _ready():
 	current_health = max_health
 	# Oyuncuyu grup ismiyle güvenli bir şekilde buluyoruz (Hata vermemesi için "player" küçük harf)
@@ -47,11 +54,26 @@ func take_damage(damage_amount: float):
 		die()
 
 func die():
-	# 1. min_xp_drop ve max_xp_drop arasında rastgele bir sayı seç (Örn: 1 ile 5 arası)
-	var xp_drop = randi_range(min_xp_drop, max_xp_drop)
+	is_dead = true # Ölüm süreci başladı
 	
-	# 2. Oyuncu hayattaysa ve XP alma fonksiyonu varsa, puanı DİREKT hesabına yatır
-	if player != null and player.has_method("add_xp"): # (Senin player.gd'de henüz gain_xp yoksa eklemeyi unutma!)
+	# 1. Çarpışmaları kapatıyoruz (ölürken bize takılmasın)
+	$CollisionShape2D.set_deferred("disabled", true)
+	
+	# 2. XP'yi oyuncuya gönderiyoruz (animasyon başlamadan önce)
+	var xp_drop = randi_range(min_xp_drop, max_xp_drop)
+	if is_instance_valid(player) and player.has_method("add_xp"):
 		player.add_xp(xp_drop)
 	
+	# 3. KÜÇÜLEREK VE ŞEFFAFLAŞARAK SİLİNME ANİMASYONU (Tween)
+	var tween = create_tween()
+	
+	# 0.3 saniye içinde boyutu (scale) 0'a getir (Kamikazenin tersi)
+	tween.tween_property(self, "scale", Vector2(0.0, 0.0), 0.3)
+	# Aynı anda (parallel), 0.3 saniye içinde yavaşça görünmez yap (fade out)
+	tween.parallel().tween_property(self, "modulate:a", 0.0, 0.3)
+	
+	# Animasyon (0.3 saniye) bitene kadar fonksiyonu burada bekletiyoruz (await)
+	await tween.finished
+	
+	# 4. Animasyon bitti, şimdi silinebiliriz
 	queue_free()
