@@ -2,6 +2,7 @@ extends CanvasLayer
 
 # Silah sahnelerini buraya preload ediyoruz (Yollar senin klasör yapına göre kanka!)
 var aura_scene = preload("res://Weapons/Aura.tscn")
+var ranged_scene = preload("res://Weapons/Ranged.tscn")
 # var projectile_scene = preload("res://Main/Weapons/ProjectileWeapon.tscn") # Diğerlerini sonra ekleriz
 
 func _ready():
@@ -36,4 +37,11 @@ func _on_weapon_1_pressed() -> void:
 		aura.position = Vector2.ZERO
 	
 	# 3. Oyunu devam ettir ve menüyü kapat
+	start_game()
+
+func _on_weapon_2_pressed() -> void:
+	var weapon = ranged_scene.instantiate()
+	var player = get_tree().get_first_node_in_group("player")
+	if player:
+		player.add_child(weapon)
 	start_game()
