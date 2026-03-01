@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 # Updated upgrade options in English
-var upgrade_options = ["speed", "attack_speed", "damage", "health", "aoe", "projectile_count", "pickup_range"]
+var upgrade_options = ["speed", "attack_speed", "damage", "health"]
 
 func _ready() -> void:
 	# Randomize the list so you don't get the same 3 every time
@@ -10,7 +10,6 @@ func _ready() -> void:
 	# Prepare the buttons (Check your Node paths: $VBoxContainer/Button1 etc.)
 	setup_button($PanelContainer/VBoxContainer/Option1, upgrade_options[0])
 	setup_button($PanelContainer/VBoxContainer/Option2, upgrade_options[1])
-	setup_button($PanelContainer/VBoxContainer/Option3, upgrade_options[2])
 
 func setup_button(button: Button, stat_name: String):
 	# Formatting the name: "attack_speed" -> "Attack Speed"
@@ -38,11 +37,8 @@ func _on_option_selected(button: Button):
 
 func get_upgrade_value(stat_name: String) -> float:
 	match stat_name:
-		"speed": return 50.0
-		"attack_speed": return 0.2
+		"speed": return 30.0
+		"attack_speed": return 0.05
 		"damage": return 10.0
 		"health": return 20.0
-		"aoe": return 0.25      # +25% Area of Effect
-		"projectile_count": return 1.0
-		"pickup_range": return 40.0
 	return 0.0
