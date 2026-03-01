@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c107mppgx273w"]
+
+[ext_resource type="Script" uid="uid://dpk540tr5mw7v" path="res://Main/Weapons/bullet.gd" id="1_ew56h"]
+[ext_resource type="Texture2D" uid="uid://5gyh3h8ox2dn" path="res://ice_spear (1).png" id="2_77pk5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2qrei"]
+
+[node name="Bullet" type="Area2D" unique_id=634111189]
+script = ExtResource("1_ew56h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1314456470]
+position = Vector2(-78, -70.5)
+scale = Vector2(5.875, 5.40625)
+texture = ExtResource("2_77pk5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=820132948]
+position = Vector2(-74.00001, -75)
+rotation = 2.3422318
+shape = SubResource("CapsuleShape2D_2qrei")
+
+[node name="Timer" type="Timer" parent="." unique_id=1932227654]
+wait_time = 5.0
+autostart = true

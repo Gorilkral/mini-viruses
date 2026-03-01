@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dq6tdxootakft"]
+
+[ext_resource type="Script" path="res://Main/enemy/enemy_spawner.gd" id="1_cjrnn"]
+[ext_resource type="PackedScene" path="res://Main/enemy/enemy_1_red_blood_cell.tscn" id="2_7hhoa"]
+[ext_resource type="PackedScene" path="res://Main/enemy/enemy_2_fast_virus.tscn" id="3_swo2q"]
+[ext_resource type="PackedScene" path="res://Main/enemy/enemy_3_fat_cell.tscn" id="4_ichlb"]
+[ext_resource type="PackedScene" path="res://Main/enemy/enemy_4_mitosis.tscn" id="5_pghsq"]
+[ext_resource type="PackedScene" path="res://Main/enemy/enemy_5_ranged_bacteria.tscn" id="6_e1ksu"]
+[ext_resource type="PackedScene" path="res://Main/enemy/enemy_6_kamikaze.tscn" id="7_tt26a"]
+
+[node name="EnemySpawner" type="Node2D" unique_id=676716919]
+script = ExtResource("1_cjrnn")
+enemy_scenes = Array[PackedScene]([ExtResource("2_7hhoa"), ExtResource("3_swo2q"), ExtResource("4_ichlb"), ExtResource("5_pghsq"), ExtResource("6_e1ksu"), ExtResource("7_tt26a")])

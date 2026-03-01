@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://s2kl5fg8nabq"]
 
 [ext_resource type="Script" uid="uid://c7r07otbh5kdf" path="res://Main/main.gd" id="1_lxy7q"]
-[ext_resource type="PackedScene" uid="uid://dq6tdxootakft" path="res://Main/enemy/enemy_spawner.tscn" id="2_6aewd"]
 [ext_resource type="PackedScene" uid="uid://crpk3xaj3od0t" path="res://Main/Player/Player.tscn" id="2_amygn"]
-[ext_resource type="PackedScene" path="res://Main/Player/Stats/stats_ui.tscn" id="3_6aewd"]
 [ext_resource type="PackedScene" uid="uid://b8rs7pna5e2op" path="res://Main/scenes/level1.tscn" id="3_ps1la"]
 
 [node name="Main" type="Node2D" unique_id=1257625029]
@@ -15,8 +13,3 @@ process_mode = 1
 
 [node name="Level1" parent="." unique_id=614317989 instance=ExtResource("3_ps1la")]
 z_index = -2
-
-[node name="StatsUI" parent="." unique_id=1209921199 instance=ExtResource("3_6aewd")]
-
-[node name="EnemySpawner" parent="." unique_id=676716919 instance=ExtResource("2_6aewd")]
-script = null

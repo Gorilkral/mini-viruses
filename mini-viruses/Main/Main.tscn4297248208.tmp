@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://chmvthjc2igow"]
+
+[ext_resource type="PackedScene" uid="uid://crpk3xaj3od0t" path="res://Main/Player/Player.tscn" id="1_83ytx"]
+[ext_resource type="PackedScene" uid="uid://b8rs7pna5e2op" path="res://Main/scenes/level1.tscn" id="2_amygn"]
+[ext_resource type="PackedScene" uid="uid://rn8cxovjlyvx" path="res://Main/Player/Upgrade/UpgradeMenu.tscn" id="3_ps1la"]
+[ext_resource type="PackedScene" uid="uid://dl7ollha78yd0" path="res://Main/Player/GameOver/GameOver.tscn" id="4_6aewd"]
+
+[node name="Main" type="Node" unique_id=874772401]
+
+[node name="Player" parent="." unique_id=182291660 instance=ExtResource("1_83ytx")]
+
+[node name="Level1" parent="." unique_id=614317989 instance=ExtResource("2_amygn")]
+
+[node name="UpgradeMenu" parent="." unique_id=816945271 instance=ExtResource("3_ps1la")]
+
+[node name="GameOver" parent="." unique_id=1687564643 instance=ExtResource("4_6aewd")]

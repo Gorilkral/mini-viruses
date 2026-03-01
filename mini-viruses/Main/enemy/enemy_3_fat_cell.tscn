@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bdgq0ufr4jqg8"]
+
+[ext_resource type="Script" path="res://Main/enemy/enemy_3_fat_cell.gd" id="1_f574b"]
+[ext_resource type="Texture2D" uid="uid://b2d1xg8naiide" path="res://icon.svg" id="2_segpl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_suqsf"]
+radius = 115.03912
+
+[node name="Enemy3FatCell" type="CharacterBody2D" unique_id=638744554]
+script = ExtResource("1_f574b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=849734519]
+shape = SubResource("CircleShape2D_suqsf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2105380491]
+texture = ExtResource("2_segpl")

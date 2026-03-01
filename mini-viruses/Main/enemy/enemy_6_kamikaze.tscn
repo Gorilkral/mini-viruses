@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d1hpr4x0ja7ea"]
+
+[ext_resource type="Script" path="res://Main/enemy/enemy_6_kamikaze.gd" id="1_ubc6r"]
+[ext_resource type="Texture2D" uid="uid://b2d1xg8naiide" path="res://icon.svg" id="2_p4gn6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xmq13"]
+radius = 77.64664
+
+[node name="Enemy6Kamikaze" type="CharacterBody2D" unique_id=1667280522]
+script = ExtResource("1_ubc6r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=991126102]
+texture = ExtResource("2_p4gn6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1036249212]
+shape = SubResource("CircleShape2D_xmq13")
