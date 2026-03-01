@@ -17,6 +17,8 @@ var current_health: float
 @export_group("Hareket")
 @export var speed := 300.0
 
+var death = false
+
 func _ready() -> void:
 	current_health = max_health
 	print("Karakter Hazır! Can: ", current_health)
@@ -103,11 +105,15 @@ func take_damage(amount: float):
 		die()
 
 func die():
-	print("Öldün!")
-	get_tree().paused = true
-	var screen = game_over_scene.instantiate()
-	get_tree().root.add_child(screen)
-	
+	current_health = 0
+	if death == false:
+		print("Öldün!")
+		death = true
+		await get_tree().create_timer(1.0).timeout
+		get_tree().paused = true
+		var screen = game_over_scene.instantiate()
+		get_tree().root.add_child(screen)
+
 
 
 func _input(event):
