@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d0utvc4h4rxu"]
+
+[ext_resource type="Script" uid="uid://dyyv8b5e4660g" path="res://Main/Weapons/weapon_1_orbital.gd" id="1_fv6p4"]
+[ext_resource type="Texture2D" uid="uid://8r6iey7wk5ko" path="res://muz.png" id="2_vru5s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v6nen"]
+radius = 114.74537
+
+[node name="Enemy1Orbital" type="Area2D" unique_id=1947161102]
+script = ExtResource("1_fv6p4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=185144017]
+position = Vector2(188, 4.0000005)
+scale = Vector2(0.48, 0.308)
+texture = ExtResource("2_vru5s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2107087752]
+position = Vector2(189.5, 1.5)
+shape = SubResource("CircleShape2D_v6nen")

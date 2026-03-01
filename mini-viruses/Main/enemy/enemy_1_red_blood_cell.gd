@@ -15,6 +15,7 @@ var player: Node2D
 var attack_cooldown: float = 0.0 # Üst üste vurmayı engelleyecek sayaç
 
 func _ready():
+	add_to_group("enemy")
 	current_health = max_health
 	# Oyuncuyu grup ismiyle güvenli bir şekilde buluyoruz (Hata vermemesi için "player" küçük harf)
 	player = get_tree().get_first_node_in_group("player")
