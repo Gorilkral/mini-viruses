@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b44hkkwyn6013"]
 
-[ext_resource type="Script" uid="uid://c2e6guan5ca03" path="res://enemy/enemy_2_fast_virus.gd" id="1_g7iwp"]
-[ext_resource type="Texture2D" uid="uid://d0m5xef2dxcm0" path="res://icon.svg" id="2_ypksb"]
+[ext_resource type="Script" uid="uid://c2e6guan5ca03" path="res://Main/enemy/enemy_2_fast_virus.gd" id="1_g7iwp"]
+[ext_resource type="Texture2D" uid="uid://b2d1xg8naiide" path="res://icon.svg" id="2_ypksb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3w8qi"]
 radius = 63.007935

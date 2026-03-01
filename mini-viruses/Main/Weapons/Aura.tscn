@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cyadwudvm53ha"]
 
-[ext_resource type="Script" uid="uid://bjepa6bqiyjqe" path="res://Weapons/aura.gd" id="1_i4k0w"]
+[ext_resource type="Script" uid="uid://bjepa6bqiyjqe" path="res://Main/Weapons/aura.gd" id="1_i4k0w"]
 [ext_resource type="Texture2D" uid="uid://8r6iey7wk5ko" path="res://muz.png" id="2_2uynw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6sqh3"]

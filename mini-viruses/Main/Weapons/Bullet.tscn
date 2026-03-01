@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://c107mppgx273w"]
 
-[ext_resource type="Script" uid="uid://dpk540tr5mw7v" path="res://Weapons/bullet.gd" id="1_ew56h"]
+[ext_resource type="Script" uid="uid://dpk540tr5mw7v" path="res://Main/Weapons/bullet.gd" id="1_ew56h"]
 [ext_resource type="Texture2D" uid="uid://5gyh3h8ox2dn" path="res://ice_spear (1).png" id="2_77pk5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2qrei"]
-radius = 20.0
-height = 196.91095
 
 [node name="Bullet" type="Area2D" unique_id=634111189]
 script = ExtResource("1_ew56h")

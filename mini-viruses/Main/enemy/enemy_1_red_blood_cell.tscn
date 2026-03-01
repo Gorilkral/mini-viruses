@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bju7pchl8owb1"]
 
-[ext_resource type="Script" uid="uid://db2ok2l08x7d0" path="res://enemy/enemy_1_red_blood_cell.gd" id="1_6js07"]
-[ext_resource type="Texture2D" uid="uid://d0m5xef2dxcm0" path="res://icon.svg" id="2_ba3gm"]
+[ext_resource type="Script" uid="uid://db2ok2l08x7d0" path="res://Main/enemy/enemy_1_red_blood_cell.gd" id="1_6js07"]
+[ext_resource type="Texture2D" uid="uid://b2d1xg8naiide" path="res://icon.svg" id="2_ba3gm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ba3gm"]
 radius = 88.14193

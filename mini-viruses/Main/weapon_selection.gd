@@ -1,8 +1,8 @@
 extends CanvasLayer
 
 # Silah sahnelerini buraya preload ediyoruz (Yollar senin klasör yapına göre kanka!)
-var aura_scene = preload("res://Weapons/Aura.tscn")
-var ranged_scene = preload("res://Weapons/Ranged.tscn")
+var aura_scene = preload("res://Main/Weapons/Aura.tscn")
+var ranged_scene = preload("res://Main/Weapons/Ranged.tscn")
 # var projectile_scene = preload("res://Main/Weapons/ProjectileWeapon.tscn") # Diğerlerini sonra ekleriz
 
 func _ready():

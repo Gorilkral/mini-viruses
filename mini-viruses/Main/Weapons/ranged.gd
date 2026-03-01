@@ -1,6 +1,6 @@
 extends Node2D
 
-var projectile_scene = preload("res://Weapons/Bullet.tscn")
+var projectile_scene = preload("res://Main/Weapons/Bullet.tscn")
 @onready var shoot_timer = $ShootTimer
 @onready var player = get_parent()
 

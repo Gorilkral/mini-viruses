@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://b8rs7pna5e2op"]
 
-[ext_resource type="Texture2D" uid="uid://brfoivobd7ll2" path="res://assets/sprites/tile1.png" id="1_g2h75"]
+[ext_resource type="Texture2D" uid="uid://brfoivobd7ll2" path="res://Main/assets/sprites/tile1.png" id="1_g2h75"]
 [ext_resource type="Script" uid="uid://txx1mr2bm8p8" path="res://Main/scenes/tile_map.gd" id="2_wwpf4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wwpf4"]
