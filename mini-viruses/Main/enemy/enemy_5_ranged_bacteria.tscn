@@ -3,9 +3,49 @@
 [ext_resource type="Script" uid="uid://cv8d7q4axiadg" path="res://Main/enemy/enemy_5_ranged_bacteria.gd" id="1_5vxs8"]
 [ext_resource type="Texture2D" uid="uid://c6knoxwh4w4br" path="res://Main/assets/sprites/enemies/virus6.png" id="2_8b2w1"]
 [ext_resource type="PackedScene" uid="uid://bfi6nwggtmok7" path="res://Main/enemy/enemy_bullet.tscn" id="2_x3m3b"]
+[ext_resource type="AudioStream" uid="uid://cohvge2eskrav" path="res://Main/assets/Sounds/Death/death1.wav" id="4_3f1nc"]
+[ext_resource type="AudioStream" uid="uid://qchwk05xp42m" path="res://Main/assets/Sounds/Death/death2.wav" id="5_2j4n2"]
+[ext_resource type="AudioStream" uid="uid://bx0crg8n4o344" path="res://Main/assets/Sounds/Death/death3.wav" id="6_bjjoj"]
+[ext_resource type="AudioStream" uid="uid://cbk0ef8n5wsl2" path="res://Main/assets/Sounds/Death/death4.wav" id="7_pa282"]
+[ext_resource type="AudioStream" uid="uid://5313ewjotakq" path="res://Main/assets/Sounds/Death/death5.wav" id="8_aoglv"]
+[ext_resource type="AudioStream" uid="uid://d0vhrbqhwsjjf" path="res://Main/assets/Sounds/Death/death6.wav" id="9_n0gk4"]
+[ext_resource type="AudioStream" uid="uid://dw30wveymxbd2" path="res://Main/assets/Sounds/Death/death7.wav" id="10_pl3uy"]
+[ext_resource type="AudioStream" uid="uid://ckajcfd6kiluc" path="res://Main/assets/Sounds/Hit/hit1.wav" id="11_tyikw"]
+[ext_resource type="AudioStream" uid="uid://v4fvbqb4l63k" path="res://Main/assets/Sounds/Hit/hit2.wav" id="12_x0xiy"]
+[ext_resource type="AudioStream" uid="uid://bgmuthn24eu7i" path="res://Main/assets/Sounds/Hit/hit3.wav" id="13_vbgmp"]
+[ext_resource type="AudioStream" uid="uid://cya6qfa84ekbe" path="res://Main/assets/Sounds/Hit/hit4.wav" id="14_kdexi"]
+[ext_resource type="AudioStream" uid="uid://cix32ku1jv113" path="res://Main/assets/Sounds/Hit/hits1.wav" id="15_pkfoe"]
+[ext_resource type="AudioStream" uid="uid://b34k3ffgbceax" path="res://Main/assets/Sounds/Hit/hits2.wav" id="16_5syts"]
+[ext_resource type="AudioStream" uid="uid://btm82mbg5eqxe" path="res://Main/assets/Sounds/Hit/hits3.wav" id="17_nqueu"]
+[ext_resource type="AudioStream" uid="uid://dr53jyo0madi8" path="res://Main/assets/Sounds/Hit/hits4.wav" id="18_vmab6"]
+[ext_resource type="AudioStream" uid="uid://g3wipydcsm7t" path="res://Main/assets/Sounds/Hit/hits5.wav" id="19_e6m73"]
+[ext_resource type="AudioStream" uid="uid://buiav8m2fwxhl" path="res://Main/assets/Sounds/Hit/hits.wav" id="20_w16aq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qd5jk"]
 radius = 45.099888
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x2f4v"]
+streams_count = 7
+stream_0/stream = ExtResource("4_3f1nc")
+stream_1/stream = ExtResource("5_2j4n2")
+stream_2/stream = ExtResource("6_bjjoj")
+stream_3/stream = ExtResource("7_pa282")
+stream_4/stream = ExtResource("8_aoglv")
+stream_5/stream = ExtResource("9_n0gk4")
+stream_6/stream = ExtResource("10_pl3uy")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fqmki"]
+streams_count = 10
+stream_0/stream = ExtResource("11_tyikw")
+stream_1/stream = ExtResource("12_x0xiy")
+stream_2/stream = ExtResource("13_vbgmp")
+stream_3/stream = ExtResource("14_kdexi")
+stream_4/stream = ExtResource("15_pkfoe")
+stream_5/stream = ExtResource("16_5syts")
+stream_6/stream = ExtResource("17_nqueu")
+stream_7/stream = ExtResource("18_vmab6")
+stream_8/stream = ExtResource("19_e6m73")
+stream_9/stream = ExtResource("20_w16aq")
 
 [node name="Enemy5RangedBacteria" type="CharacterBody2D" unique_id=504224349]
 motion_mode = 1
@@ -18,3 +58,9 @@ texture = ExtResource("2_8b2w1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=901428092]
 shape = SubResource("CircleShape2D_qd5jk")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="." unique_id=887369029]
+stream = SubResource("AudioStreamRandomizer_x2f4v")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="." unique_id=1957474304]
+stream = SubResource("AudioStreamRandomizer_fqmki")

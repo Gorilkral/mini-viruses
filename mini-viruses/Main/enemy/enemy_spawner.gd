@@ -100,3 +100,6 @@ func spawn_enemy():
 
 		enemy.global_position = spawn_pos
 		get_parent().call_deferred("add_child", enemy)
+		
+		if has_node("SpawnSound"):
+			$SpawnSound.play()

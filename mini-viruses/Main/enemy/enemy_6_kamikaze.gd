@@ -52,6 +52,9 @@ func explode():
 			if player.has_method("take_damage"):
 				player.take_damage(explosion_damage)
 	
+	if has_node("ExplosionSound"):
+		$ExplosionSound.play()
+	
 	# GÖRSEL PATLAMA EFEKTİ (Şişme ve Kızarma)
 	var tween = create_tween()
 	modulate = Color(1.0, 0.3, 0.0) 
@@ -64,6 +67,9 @@ func explode():
 	queue_free() # Yok ol
 
 func take_damage(amount: float):
+	if has_node("HitSound"):
+		$HitSound.play()
+		
 	if is_exploding: return 
 	
 	current_health -= amount
@@ -71,6 +77,9 @@ func take_damage(amount: float):
 		die()
 
 func die():
+	if has_node("DeathSound"):
+		$DeathSound.play()
+	
 	is_dead = true # Ölüm süreci başladı
 	
 	# 1. Çarpışmaları kapatıyoruz (ölürken bize takılmasın)

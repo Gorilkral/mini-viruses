@@ -42,7 +42,7 @@ func get_closest_enemy() -> Node2D:
 	var min_dist = INF
 
 	# --- GİRİNTİLERİ DÜZELTTİĞİMİZ KISIM BURASI ---
-	var max_range = 250.0 * player.area_of_effect
+	var max_range = 350.0 * player.area_of_effect
 
 	for enemy in enemies:
 		var dist = global_position.distance_to(enemy.global_position)
