@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dqtdefp170o7f"]
+
+[ext_resource type="Script" uid="uid://cv8d7q4axiadg" path="res://enemy/enemy_5_ranged_bacteria.gd" id="1_5vxs8"]
+[ext_resource type="Texture2D" uid="uid://d0m5xef2dxcm0" path="res://icon.svg" id="2_3pid4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qd5jk"]
+
+[node name="Enemy5RangedBacteria" type="CharacterBody2D" unique_id=504224349]
+script = ExtResource("1_5vxs8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=556603273]
+texture = ExtResource("2_3pid4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=901428092]
+shape = SubResource("CircleShape2D_qd5jk")

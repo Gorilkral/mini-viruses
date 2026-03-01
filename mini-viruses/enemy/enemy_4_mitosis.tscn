@@ -1,3 +1,18 @@
-[gd_scene load_steps=0 format=3 uid="uid://7rm66u7nmsta"]
+[gd_scene format=3 uid="uid://7rm66u7nmsta"]
+
+[ext_resource type="Script" uid="uid://ble4o3j64nhjc" path="res://enemy/enemy_4_mitosis.gd" id="1_xe1d8"]
+[ext_resource type="PackedScene" uid="uid://bju7pchl8owb1" path="res://enemy/enemy_1_red_blood_cell.tscn" id="2_io4t5"]
+[ext_resource type="Texture2D" uid="uid://b2d1xg8naiide" path="res://icon.svg" id="3_t0hr4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_odhgt"]
+radius = 64.28063
 
 [node name="Enemy4Mitosis" type="CharacterBody2D" unique_id=1496949364]
+script = ExtResource("1_xe1d8")
+offspring_scene = ExtResource("2_io4t5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1854683139]
+shape = SubResource("CircleShape2D_odhgt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1439968636]
+texture = ExtResource("3_t0hr4")

@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://crpk3xaj3od0t"]
 
-[ext_resource type="Script" uid="uid://p35gaqdyvtg2" path="res://Main/Player/player.gd" id="1_q3lat"]
-[ext_resource type="Texture2D" uid="uid://b2d1xg8naiide" path="res://icon.svg" id="2_tok1r"]
+[ext_resource type="Script" uid="uid://p35gaqdyvtg2" path="res://Player/player.gd" id="1_q3lat"]
+[ext_resource type="Texture2D" uid="uid://b2d1xg8naiide" path="res://icon.svg" id="2_q3lat"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q3lat"]
 size = Vector2(127, 124)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q3lat"]
-radius = 144.77914
+radius = 136.0
 
 [node name="Player" type="CharacterBody2D" unique_id=182291660 groups=["player"]]
 script = ExtResource("1_q3lat")
@@ -19,7 +19,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q3lat")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=653996004]
-texture = ExtResource("2_tok1r")
+texture = ExtResource("2_q3lat")
 
 [node name="AttackRange" type="Area2D" parent="." unique_id=1906587698]
 

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bvaub52cpe16p"]
+
+[ext_resource type="Script" uid="uid://bf6dyly0r3e6f" path="res://Weapons/ranged.gd" id="1_3vce8"]
+
+[node name="Ranged" type="Area2D" unique_id=2051481132]
+script = ExtResource("1_3vce8")
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=1242708775]
+autostart = true

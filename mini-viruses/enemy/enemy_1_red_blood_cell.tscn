@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://bju7pchl8owb1"]
+[gd_scene format=3 uid="uid://bju7pchl8owb1"]
 
 [ext_resource type="Script" uid="uid://db2ok2l08x7d0" path="res://enemy/enemy_1_red_blood_cell.gd" id="1_6js07"]
 [ext_resource type="Texture2D" uid="uid://d0m5xef2dxcm0" path="res://icon.svg" id="2_ba3gm"]
