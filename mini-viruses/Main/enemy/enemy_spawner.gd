@@ -4,6 +4,8 @@ extends Node2D
 @export var spawn_radius: float = 700.0 
 @export var spawn_rate: float = 1.5
 
+var previous_level = 1
+
 # ---------------------------------------------------------
 # 🎯 HER DÜŞMANIN ÇIKMA İHTİMALİ (Ağırlık Sistemi)
 # Bu liste Inspector'daki enemy_scenes sırasıyla birebir aynı olmalı!
@@ -35,6 +37,12 @@ func _process(delta: float):
 	if spawn_timer <= 0.0:
 		spawn_enemy()
 		spawn_timer = spawn_rate
+		
+	if is_instance_valid(player):
+		if player.level > previous_level:
+			var spawn_boost = randf_range(0.001, 0.005)
+			spawn_rate -= spawn_rate * spawn_boost
+			previous_level = player.level
 
 func spawn_enemy():
 	# Güvenlik: Sahneler boşsa veya ağırlık listemiz sahne sayısıyla uyuşmuyorsa iptal et
@@ -69,22 +77,19 @@ func spawn_enemy():
 		if is_instance_valid(player) and player.level > 1:
 			var level_farki = player.level - 1 # 1. seviyede bonus yok, 2. seviyede 1 katı, 3'te 2 katı...
 			
-			var spawn_boost = randf_range(0.03, 0.05) * level_farki
-			spawn_rate = spawn_rate + spawn_boost
-			
 			# CAN ARTIŞI: Her level için %5 ile %15 arası rastgele bir artış
 			if "max_health" in enemy:
-				var health_boost = randf_range(0.01, 0.4) * level_farki
+				var health_boost = randf_range(0.001, 0.02) * level_farki
 				enemy.max_health += enemy.max_health * health_boost
 				
 			# HASAR ARTIŞI: Her level için %5 ile %10 arası rastgele bir artış
 			if "attack_damage" in enemy:
-				var damage_boost = randf_range(0.01, 0.2) * level_farki
+				var damage_boost = randf_range(0.001, 0.02) * level_farki
 				enemy.attack_damage += enemy.attack_damage * damage_boost
 				
 			# HIZ ARTIŞI: Hız çok tehlikeli bir stattır, o yüzden daha az (%2 ile %5 arası) artsın
 			if "speed" in enemy:
-				var speed_boost = randf_range(0.01, 0.03) * level_farki
+				var speed_boost = randf_range(0.001, 0.003) * level_farki
 				enemy.speed += enemy.speed * speed_boost
 				
 			# İSTEĞE BAĞLI: Düşmanlar güçlendikçe daha çok XP versin

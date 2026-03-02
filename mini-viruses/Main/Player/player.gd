@@ -75,7 +75,7 @@ func apply_upgrade(upgrade_type: String, value: float):
 # Tecrübe puanı sistemi
 var level := 1
 var xp := 0.0
-var xp_required := 100.0
+var xp_required := 50.0
 
 func add_xp(amount: float):
 	xp += amount

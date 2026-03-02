@@ -71,6 +71,10 @@ func die():
 	if is_instance_valid(player) and player.has_method("add_xp"):
 		player.add_xp(xp_drop)
 	
+	var health_drop = xp_drop / 3
+	if is_instance_valid(player) and player.has_method("add_health"):
+		player.add_health(health_drop)
+	
 	# 3. KÜÇÜLEREK VE ŞEFFAFLAŞARAK SİLİNME ANİMASYONU (Tween)
 	var tween = create_tween()
 	
