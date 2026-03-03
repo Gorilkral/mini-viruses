@@ -6,8 +6,8 @@ extends CharacterBody2D
 
 @export var speed: float = 70.0
 @export var max_health: float = 15.0
-@export var min_xp_drop: int = 8
-@export var max_xp_drop: int = 15
+@export var min_xp_drop: int = 4
+@export var max_xp_drop: int = 9
 @export var attack_damage: float = 10.0
 
 @export var offspring_scene: PackedScene

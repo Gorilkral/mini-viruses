@@ -11,11 +11,12 @@ var current_health: float
 @export_group("Saldırı")
 @export var attack_damage := 10.0
 @export var attack_speed := 1.0 
-@export var area_of_effect := 1.0 
-@export var projectile_count := 1.0
+@export var weapon := 1.0 
 
 @export_group("Hareket")
 @export var speed := 300.0
+
+var auto_upgrade: bool = false
 
 var death = false
 
@@ -51,6 +52,9 @@ func shoot() -> void:
 	print_debug("fonksiyon calisiyo la")
 	
 	
+@onready var banana = get_tree().get_first_node_in_group("weapon_1_orbital")
+@onready var staff = get_tree().get_first_node_in_group("weapon_2_piv_piv")
+	
 func apply_upgrade(upgrade_type: String, value: float):
 	match upgrade_type:
 		"speed":
@@ -64,18 +68,19 @@ func apply_upgrade(upgrade_type: String, value: float):
 		"health":
 			max_health += value
 			current_health += value
-		"aoe":
-			area_of_effect += value
-			# Updates the visual/collision range
-			attack_range.scale = Vector2(area_of_effect, area_of_effect)
-		"projectile_count":
-			# You should add this variable at the top of player.gd: var projectile_count = 1
-			projectile_count += int(value)
+		"weapon":
+			for child in get_children():
+				if child.is_in_group("piv_piv_weapon"):
+					weapon += value * 10
+					print_debug("10 ile carpildi")
+				else:
+					weapon += value
+					print_debug("carpilmadi")
 
 # Tecrübe puanı sistemi
 var level := 1
 var xp := 0.0
-var xp_required := 50.0
+var xp_required := 30.0
 
 func add_xp(amount: float):
 	xp += amount
@@ -100,16 +105,15 @@ func level_up():
 	
 	# 2. Menüyü sahne ağacına ekle (Ekranda görünmesi için şart)
 	get_tree().root.add_child(menu)
-	
-	# 3. Oyunu durdur (Menüdeki butonlara basana kadar her şey donsun)
-	get_tree().paused = true
-	
 
 var game_over_scene = preload("res://Main/Player/GameOver/GameOver.tscn") # Dosya yoluna dikkat!
 
 func take_damage(amount: float):
 	current_health -= amount
 	print("Can gitti! Kalan: ", current_health)
+	
+	if has_node("DeathSound"):
+		$DeathSound.play()
 	
 	if current_health <= 0:
 		die()
@@ -122,7 +126,20 @@ func die():
 	if death == false:
 		print("Öldün!")
 		death = true
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(0.1).timeout
+		if has_node("DeathSound"):
+			$DeathSound.play()
+			await get_tree().create_timer(0.1).timeout
+		if has_node("DeathSound"):
+			$DeathSound.play()
+			await get_tree().create_timer(0.1).timeout
+		if has_node("DeathSound"):
+			$DeathSound.play()
+			await get_tree().create_timer(0.1).timeout
+		if has_node("DeathSound"):
+			$DeathSound.play()
+		await get_tree().create_timer(0.6).timeout
+
 		get_tree().paused = true
 		var screen = game_over_scene.instantiate()
 		get_tree().root.add_child(screen)

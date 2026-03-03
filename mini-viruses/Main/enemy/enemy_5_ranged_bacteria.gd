@@ -5,8 +5,8 @@ extends CharacterBody2D
 @export var max_health: float = 15.0
 @export var attack_range: float = 500.0 # Oyuncuya ne kadar uzaktan ateş edeceği (Biraz artırdım)
 @export var fire_rate: float = 2.5
-@export var min_xp_drop: int = 5
-@export var max_xp_drop: int = 12
+@export var min_xp_drop: int = 2
+@export var max_xp_drop: int = 9
 
 @export var projectile_scene: PackedScene # Inspector'dan mermiyi atayacağımız yer
 

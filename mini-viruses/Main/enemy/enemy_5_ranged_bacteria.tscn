@@ -61,6 +61,8 @@ shape = SubResource("CircleShape2D_qd5jk")
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="." unique_id=887369029]
 stream = SubResource("AudioStreamRandomizer_x2f4v")
+max_polyphony = 5
 
 [node name="HitSound" type="AudioStreamPlayer2D" parent="." unique_id=1957474304]
 stream = SubResource("AudioStreamRandomizer_fqmki")
+max_polyphony = 5

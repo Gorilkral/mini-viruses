@@ -9,6 +9,9 @@ extends CanvasLayer
 @onready var xp_bar = %XpBar 
 @onready var xp_text = %XpText 
 
+# YENİ: CheckBox'ı koda bağladık
+@onready var auto_upgrade_checkbox = %AutoUpgradeCheckBox
+
 var player: Node2D
 var previous_health: float = 100
 var damage_tween: Tween
@@ -25,6 +28,15 @@ func _ready():
 		if xp_bar:
 			xp_bar.value = player.xp
 			xp_bar.max_value = player.xp_required
+		
+		# YENİ: Oyun başladığında tiki oyuncunun sistemine bağla
+		if auto_upgrade_checkbox:
+			auto_upgrade_checkbox.button_pressed = player.auto_upgrade
+			auto_upgrade_checkbox.toggled.connect(_on_auto_upgrade_toggled)
+
+func _on_auto_upgrade_toggled(toggled_on: bool):
+	if player:
+		player.auto_upgrade = toggled_on
 
 func _process(delta: float) -> void:
 	if player:
@@ -56,10 +68,10 @@ func _process(delta: float) -> void:
 			xp_bar.value = lerp(xp_bar.value, float(player.xp), 10.0 * delta)
 			
 		if xp_text: # EĞER EKRANDA BİR YAZI (LABEL) VARSA ONU DA GÜNCELLE
-			xp_text.text = " LEVEL " + str(int(player.level)) + "     XP " + str(int(player.xp)) + " / " + str(int(player.xp_required))
+			xp_text.text = " LEVEL " + str(int(player.level))
 		
 		# --- YAZI GÜNCELLEMELERİ ---
-		health_text.text = str(int(round(player.current_health))) + " / " + str(round(player.max_health))
+		health_text.text = str(int(round(player.current_health))) + " / " + str(int(round(player.max_health)))
 		
 		var text_to_show = "[ Stats ]\n"
 		text_to_show += "Damage: " + str(int(round(player.attack_damage))) + "\n"

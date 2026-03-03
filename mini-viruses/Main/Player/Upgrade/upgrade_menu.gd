@@ -1,9 +1,23 @@
 extends CanvasLayer
 
 # Updated upgrade options in English
-var upgrade_options = ["speed", "attack_speed", "damage", "health"]
+var upgrade_options = ["speed", "attack_speed", "damage", "health", "weapon"]
 
 func _ready() -> void:
+	var player = get_tree().get_first_node_in_group("player")
+	
+	# 1. EĞER OTOMATİK GELİŞTİRME AÇIKSA (GİZLİ MOD)
+	if player and player.auto_upgrade:
+		upgrade_options.shuffle()
+		var selected_stat = upgrade_options[0] # Rastgele birini seç
+		
+		player.apply_upgrade(selected_stat, get_upgrade_value(selected_stat))
+		print("Otomatik Upgrade Yapıldı: ", selected_stat)
+		
+		queue_free() # Ekrana çıkmadan ve oyunu dondurmadan anında kendini sil
+		return # Alt satırlardaki buton kurma kodlarına geçmesini engelle!
+	
+	get_tree().paused = true
 	# Randomize the list so you don't get the same 3 every time
 	upgrade_options.shuffle()
 	
@@ -41,4 +55,5 @@ func get_upgrade_value(stat_name: String) -> float:
 		"attack_speed": return 0.05
 		"damage": return 10.0
 		"health": return 20.0
+		"weapon": return 0.05
 	return 0.0

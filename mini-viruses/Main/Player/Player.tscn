@@ -28,6 +28,8 @@ autostart = true
 
 [node name="LvlSound" type="AudioStreamPlayer2D" parent="." unique_id=780893250]
 stream = ExtResource("3_n21ks")
+max_polyphony = 5
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="." unique_id=1768807674]
 stream = ExtResource("4_6fdm1")
+max_polyphony = 10

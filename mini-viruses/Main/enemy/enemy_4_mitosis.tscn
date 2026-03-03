@@ -44,6 +44,8 @@ shape = SubResource("CircleShape2D_odhgt")
 
 [node name="HitSound" type="AudioStreamPlayer2D" parent="." unique_id=1772552612]
 stream = SubResource("AudioStreamRandomizer_oq3ea")
+max_polyphony = 5
 
 [node name="SplitSound" type="AudioStreamPlayer2D" parent="." unique_id=1284692852]
 stream = ExtResource("14_qrowa")
+max_polyphony = 5

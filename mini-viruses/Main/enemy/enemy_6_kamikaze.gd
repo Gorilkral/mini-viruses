@@ -5,8 +5,8 @@ extends CharacterBody2D
 @export var max_health:float = 10.0
 @export var explosion_damage:float = 25.0
 @export var explosion_range:float = 200.0 # BÜYÜTÜLDÜ! (Çarpışma mesafesinden büyük olmalı ki hasar versin)
-@export var min_xp_drop: int = 20
-@export var max_xp_drop: int = 40
+@export var min_xp_drop: int = 6
+@export var max_xp_drop: int = 13
 
 var current_health: float
 var player: Node2D

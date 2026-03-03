@@ -41,6 +41,7 @@ func _on_weapon_1_pressed() -> void:
 
 func _on_weapon_2_pressed() -> void:
 	var weapon = ranged_scene.instantiate()
+	weapon.add_to_group("piv_piv_weapon")
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
 		player.add_child(weapon)

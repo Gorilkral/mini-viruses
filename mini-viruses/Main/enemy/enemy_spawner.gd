@@ -94,7 +94,7 @@ func spawn_enemy():
 				
 			# İSTEĞE BAĞLI: Düşmanlar güçlendikçe daha çok XP versin
 			if "min_xp_drop" in enemy and "max_xp_drop" in enemy:
-				var xp_boost = randf_range(0.2, 0.4) * level_farki
+				var xp_boost = randf_range(0.1, 0.3) * level_farki
 				enemy.min_xp_drop += int(enemy.min_xp_drop * xp_boost)
 				enemy.max_xp_drop += int(enemy.max_xp_drop * xp_boost)
 		# ==========================================================
